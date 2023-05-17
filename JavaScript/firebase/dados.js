@@ -20,3 +20,17 @@ function salvar (event, collection){
         incluir(event, collection)
     }
 }
+
+async function incluir (event, collection){
+    event.preventDefault()
+    let btSalvar = document.getElementById('btnSalvar')
+    btSalvar.innerHTML = 'Carregando...'
+    return await firebase.database().ref(collection).push({
+        nome: document.getElementById('nome').values,
+        email: document.getElementById('email').values,
+        cpf: document.getElementById('cpf').values,
+        nascimento: document.getElementById('nascimento').values,
+        peso: document.getElementById('peso').values,
+        altura: document.getElementById('altura').values
+    })
+}

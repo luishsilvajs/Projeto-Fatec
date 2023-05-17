@@ -1,4 +1,5 @@
-function salvar (event, collection){
+function salvar(event, collection){
+    alert('test')
     event.preventDefault()
     if(document.getElementById('nome').value === ''){
         alerta('Campo Nome deve ser preenchido.')
